@@ -10,7 +10,7 @@ const projects = [
         title: 'bradleyhodge.ca',
         description: 'My main portfolio website built with the React framework.',
         tech: ['React', 'CSS Styling', 'JavaScript'],
-        link: '#contact-section',
+        link: 'https://bradleyhodge.ca',
         background: bg_bradleyhodge
     },
     {
@@ -18,7 +18,7 @@ const projects = [
         title: 'Wordle in React',
         description: 'This is a Wordle clone I have built using only React.',
         tech: ['React', 'CSS Styling', 'JavaScript'],
-        link: '/wordle',
+        link: 'https://wordle-in-react.herokuapp.com/',
         background: bg_wordle
     }
 ]

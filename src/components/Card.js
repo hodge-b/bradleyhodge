@@ -16,7 +16,11 @@ export default function Card(props){
             <div className="card-tech-container">
                 {techElements}
             </div>
-            <Link to={props.link}><p className="card-live-link">Live View</p></Link>
+            {props.link != 'https://bradleyhodge.ca' ? 
+                <a href={props.link} rel='noreferrer noopener' target='_blank'><p className="card-live-link">Live View</p></a>: 
+                <a href={props.link}><p className="card-live-link">Live View</p></a>
+            }
+            
         </div>
     )
 }
