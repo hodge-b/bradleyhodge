@@ -1,17 +1,17 @@
 import React from 'react'
 
-export default function About(){
+export default function About({darkMode}){
 
 
     return(
         <section id='about-section'>
             <div className="about-section-info-container">
                 <div className="title-container">
-                    <h2 className='main-title'><span className='main-title--number'>-01-</span> About Me</h2>
+                    <h2 className='main-title' style={darkMode === 'true' ? {color: '#969e98'} : {color: '#6f7378'}}><span className='main-title--number' style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}>-01-</span> About Me</h2>
                     <hr className='title--hr'/>
                 </div>
                 <div className="about-section-main-wrapper">
-                    <div className="about-section-main-text">
+                    <div className="about-section-main-text" style={darkMode === 'true' ? {color: '#969e98'} : {color: '#6f7378'}}>
                         <p>
                             Hi, my name is Bradley Hodge and this is my story. I have spent the last ten years creating and building
                             programs using various languages (ie. C++, C#, Java, etc) as a hobbyist programmer. This was all thanks to
@@ -29,35 +29,35 @@ export default function About(){
                         <p>Here are a few of the technologies I've recently been working with:</p>
                         <div className="about-section-tech-container">
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
+                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
                                 <p>HTML</p>
                             </div>
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
+                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
                                 <p>CSS</p>
                             </div>
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
+                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
                                 <p>JavaScript (ES6+)</p>
                             </div> 
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
+                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
                                 <p>SCSS</p>
                             </div>
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
+                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
                                 <p>React</p>
                             </div>
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
+                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
                                 <p>Bootstrap</p>
                             </div>
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
+                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
                                 <p>PHP</p>
                             </div>
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
+                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
                                 <p>MySQL</p>
                             </div>
                         </div>

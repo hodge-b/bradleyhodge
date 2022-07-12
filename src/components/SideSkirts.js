@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function SideSkirts(){
+export default function SideSkirts(darkMode){
 
     return(
-        <div className="sideskirt-component">
+        <div className="sideskirt-component" style={{color: '#000000'}}>
             <div className="sideskirt-left-container">
-                <p className="sideskirt--text sideskirt--text--left">
+                <p className="sideskirt--text sideskirt--text--left" style={darkMode === 'true' ? {color: '#969e98'} : {color: '#6f7378'}}>
                     <a href="https://www.linkedin.com/in/bradley-hodge-4a1146240/" target='_blank' rel="noopener noreferrer">
                         <i className="ri-linkedin-line"></i>
                     </a>

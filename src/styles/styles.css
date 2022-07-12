@@ -1,6 +1,10 @@
 :root{
     /* COLORS */
     /* #212b23 #141a15 */
+    /* LIGHTMODE */
+    --clr-background-lightmode:#ffffff;
+
+    /* DARKMODE */
     --clr-background-dark:#0c100c;
     --clr-background:#171e18;
     --clr-background2: #222c24;
@@ -98,7 +102,7 @@ html{
 body{
     margin: 0;
     box-sizing: border-box;
-    background-color: var(--clr-background);
+    /*background-color: var(--clr-background);*/
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
@@ -112,7 +116,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1rem 1rem;
-    background-color: var(--clr-background);
+    /*background-color: var(--clr-background);*/
     box-shadow: 0px 15px 10px -15px var(--clr-background-dark);
     z-index: 1;
 }
@@ -154,7 +158,7 @@ a:visited{
     padding: 1rem;
 
     letter-spacing: .1rem;
-    color: var(--clr-hero-primary-accent) !important;
+    color: var(--clr-hero-primary-accent);
     background-color: var(--clr-background);
 
     border-radius: 4px;
@@ -276,7 +280,7 @@ a:visited{
     margin-bottom: .5rem;
 
     font-weight: 200;
-    color: var(--clr-hero-primary-accent);
+    /*color: var(--clr-hero-primary-accent);*/
 }
 
 .list-item-text{
@@ -354,7 +358,7 @@ a:visited{
         height: 30vh;
     
         font-size: .6rem;
-        color: var(--clr-hero-main);
+        /*color: var(--clr-hero-main);*/
     }
     .sideskirt-left-container{
         display: flex;
@@ -543,8 +547,15 @@ a:visited{
 }
 
 .header-home{
-    color: var(--clr-hero-primary-accent);
+    /*color: var(--clr-hero-primary-accent);*/
     font-weight: 200;
+}
+
+.header-home-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
 
@@ -922,7 +933,7 @@ a:visited{
     padding: 1rem;
     min-height: 300px;
 
-    box-shadow: 0 0 1rem .2rem var(--clr-background2-shadow);
+    box-shadow: 0 0 .3rem 0 var(--clr-background2-shadow);
     border-radius: 5px;
 }
 
@@ -1203,7 +1214,7 @@ a:visited{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3.5rem;
+    padding-bottom: 3.5rem;
 
     font-weight: 100;
     color: var(--clr-hero-main);
