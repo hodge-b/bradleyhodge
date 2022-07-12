@@ -14,7 +14,7 @@ export default function Contact({darkMode}){
                     and evolve my knowledge within the framework. 
                     Feel free to send me an e-mail.</p>
                 <div className='contact-section-sub-container'>
-                    <a href='mailto:bradley_hodge@hotmail.com' className='btn btn--say-hi' style={darkMode === 'true' ? {backgroundColor: '#171e18', color: '#93faa1'} : {backgroundColor: '#6ac46a', color: '#000000'}}>Say Hi</a>
+                    <a href='mailto:bradley_hodge@hotmail.com' className='btn btn--say-hi' style={darkMode === 'true' ? {border: '1px solid #93faa1',backgroundColor: '#171e18', color: '#93faa1'} : {border: '1px solid #6ac46a',backgroundColor: '#6ac46a', color: '#000000'}}>Say Hi</a>
                 </div>
             </div>
         </section>

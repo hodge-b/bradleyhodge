@@ -17,8 +17,8 @@ export default function Card(props){
                     {techElements}
                 </div>
                 {props.link !== 'https://bradleyhodge.ca' ?
-                    <a href={props.link} target='_blank' rel='noopener noreferrer' className='btn btn--live-link' style={props.darkMode === 'true' ? {backgroundColor: '#171e18', color: '#93faa1'} : {backgroundColor: '#6ac46a', color: '#000000'}}>Live View</a> :
-                    <a href={props.link} className='btn btn--live-link' style={props.darkMode === 'true' ? {backgroundColor: '#171e18', color: '#93faa1'} : {backgroundColor: '#6ac46a', color: '#000000'}}>Live View</a>
+                    <a href={props.link} target='_blank' rel='noopener noreferrer' className='btn btn--live-link' style={props.darkMode === 'true' ? {border: '1px solid #93faa1',backgroundColor: '#171e18', color: '#93faa1'} : {border: '1px solid #6ac46a',backgroundColor: '#6ac46a', color: '#000000'}}>Live View</a> :
+                    <a href={props.link} className='btn btn--live-link' style={props.darkMode === 'true' ? {border: '1px solid #93faa1',backgroundColor: '#171e18', color: '#93faa1'} : {border: '1px solid #6ac46a',backgroundColor: '#6ac46a', color: '#000000'}}>Live View</a>
                 }
             </div>
         </div>

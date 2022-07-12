@@ -11,7 +11,7 @@ export default function Hero({darkMode}){
             <p className='hero-message' style={darkMode === 'true' ? {color: '#969e98'} : {color: '#6f7378'}}>I'm an ambitious web developer from Oakville, ON. <span className='text-color-change' style={darkMode === 'true' ? {color: '#93faa1'} : {color: '#6ac46a'}}>Specializing in React and PHP applications</span>
                 , I enjoy building websites and web-applications that are both user-friendly and powerful.
             </p>
-            <a href='#contact-section' className='btn btn--get-started' style={darkMode === 'true' ? {backgroundColor: '#171e18', color: '#93faa1'} : {backgroundColor: '#6ac46a', color: '#000000'}}>Let's get started</a>
+            <a href='#contact-section' className='btn btn--get-started' style={darkMode === 'true' ? {border: '1px solid #93faa1',backgroundColor: '#171e18', color: '#93faa1'} : {border: '1px solid #6ac46a',backgroundColor: '#6ac46a', color: '#000000'}}>Let's get started</a>
         </section>
     )
 }
