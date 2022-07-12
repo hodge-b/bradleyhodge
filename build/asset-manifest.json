@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6d9b7b38.css",
+    "main.js": "/static/js/main.2960071f.js",
+    "static/media/myself.jpg": "/static/media/myself.a5da5d60c2ad76c67588.jpg",
+    "static/media/bradleyhodge.png": "/static/media/bradleyhodge.b3f72bc186fdf8be0d80.png",
+    "static/media/wordle.png": "/static/media/wordle.ad7147ccb9f97a735b78.png",
+    "static/media/trackify.png": "/static/media/trackify.efdc262a6f677cd184d1.png",
+    "index.html": "/index.html",
+    "main.6d9b7b38.css.map": "/static/css/main.6d9b7b38.css.map",
+    "main.2960071f.js.map": "/static/js/main.2960071f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d9b7b38.css",
+    "static/js/main.2960071f.js"
+  ]
+}

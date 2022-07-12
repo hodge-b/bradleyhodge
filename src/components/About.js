@@ -2,7 +2,6 @@ import React from 'react'
 
 export default function About(){
 
-    const introParagraph = ``
 
     return(
         <section id='about-section'>
@@ -20,7 +19,7 @@ export default function About(){
                         </p>
                         <p>
                             Today, I have a terrific grasp of programming fundamentals and coding practices from different 
-                            outlets like University, YouTube, and Textbooks. I love the satisfaction of telling the computer what 
+                            outlets like University, websites, and Textbooks. I love the satisfaction of telling the computer what 
                             to do and to see the final result after all the hard work and late nights--with caffeine--in a working program.
                         </p>
                         <p>
@@ -51,7 +50,15 @@ export default function About(){
                             </div>
                             <div className="about-section-tech-item-container">
                                 <i className="ri-tools-line"></i>
-                                <p>TypeScript</p>
+                                <p>Bootstrap</p>
+                            </div>
+                            <div className="about-section-tech-item-container">
+                                <i className="ri-tools-line"></i>
+                                <p>PHP</p>
+                            </div>
+                            <div className="about-section-tech-item-container">
+                                <i className="ri-tools-line"></i>
+                                <p>MySQL</p>
                             </div>
                         </div>
                     </div>

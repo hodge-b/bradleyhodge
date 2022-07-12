@@ -14,7 +14,7 @@ export default function Contact(){
                     and evolve my knowledge within the framework. 
                     Feel free to send me an e-mail.</p>
                 <div className='contact-section-sub-container'>
-                    <a href='mailto:bradley_hodge@hotmail.com'><button className='btn btn--say-hi'>Say Hi</button></a>
+                    <a href='mailto:bradley_hodge@hotmail.com' className='btn btn--say-hi'>Say Hi</a>
                 </div>
             </div>
         </section>

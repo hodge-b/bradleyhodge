@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import '../src/styles/styles.css'
 
 import Header from './components/Header'
+import SideSkirts from './components/SideSkirts'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
 import About from './components/About'
@@ -18,6 +19,7 @@ export default function App(){
     return(
         <main id='main'>
             <Header windowWidth={windowWidth} />
+            <SideSkirts />
             <Hero />
             <About />
             <Projects /> 
