@@ -22,7 +22,7 @@ export default function Projects({darkMode}){
         <section id="projects-section">
             <div className="projects-section-container">
                 <div className="title-container">
-                    <h2 className='main-title' style={darkMode === 'true' ? {color: '#969e98'} : {color: '#6f7378'}}><span className='main-title--number' style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}>-01-</span> What I've Built</h2>
+                    <h2 className='main-title' ><span className='main-title--number' >-01-</span> What I've Built</h2>
                     <hr className='title--hr title--hr--projects'/>
                 </div>
                 {cardElements}

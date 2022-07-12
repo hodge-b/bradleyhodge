@@ -1,8 +1,8 @@
 import {nanoid} from 'nanoid'
 
-import bg_bradleyhodge from '../images/bradleyhodge.png'
-import bg_trackify from '../images/trackify.png'
-import bg_wordle from '../images/wordle.png'
+const bg_trackify = require("../images/trackify.png")
+const bg_bradleyhodge = require("../images/bradleyhodge.png")
+const bg_wordle = require("../images/wordle.png")
 
 
 const projects = [
@@ -27,7 +27,7 @@ const projects = [
         title: 'Wordle in React',
         description: 'This is a Wordle clone I have built using only React.',
         tech: ['React', 'CSS Styling', 'JavaScript'],
-        link: 'https://wordle-in-react.herokuapp.com/',
+        link: 'https://wordle-in-react.herokuapp.com',
         background: bg_wordle
     }
 ]

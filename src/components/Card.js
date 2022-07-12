@@ -3,7 +3,7 @@ import React from 'react'
 export default function Card(props){
 
     const techElements = props.techs.map(item => (
-        <p key={props.techs.indexOf(item)} className="card-tech-item" style={props.darkMode === 'true' ? {color: '#969e98'} : {color: '#6f7378'}}>{item}</p>
+        <p key={props.techs.indexOf(item)} className="card-tech-item" >{item}</p>
     ))
     
     return(
