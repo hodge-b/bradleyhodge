@@ -7,7 +7,7 @@ export default function About({darkMode}){
         <section id='about-section'>
             <div className="about-section-info-container">
                 <div className="title-container">
-                    <h2 className='main-title' style={darkMode === 'true' ? {color: '#969e98'} : {color: '#6f7378'}}><span className='main-title--number' style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}>-01-</span> About Me</h2>
+                    <h2 className='main-title' style={darkMode === 'true' ? {color: '#969e98'} : {color: '#6f7378'}}><span className='main-title--number' style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}>-02-</span> About Me</h2>
                     <hr className='title--hr'/>
                 </div>
                 <div className="about-section-main-wrapper">

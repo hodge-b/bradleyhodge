@@ -20,7 +20,7 @@ export default function Navbar({windowWidth, darkMode}){
             {windowWidth <= 768 ? 
                 !isNavbarModalOpen ? 
                     <HamburgerButton onclick={handleHamburgerClick} /> : 
-                    <NavbarModal onclickExit={handleModalExit} /> 
+                    <NavbarModal onclickExit={handleModalExit} darkMode={darkMode} /> 
                 : <div className="navbar-link-container">
                             <a href='#projects-section'>
                                 <div className="navbar-item-container">

@@ -10,7 +10,7 @@ export default function Contact({darkMode}){
             </div>
             <div className="contact-section-main-container">
                 <h2 className='contact-section-subtitle' style={darkMode === 'true' ? {color: '#969e98'} : {color: '#6f7378'}}>Let's Talk!</h2>
-                <p style={darkMode === 'true' ? {color: '#969e98'} : {color: '#6f7378'}}>I am currently <span className='text-color-change' style={darkMode === 'true' ? {color: '#93faa1'} : {color: '#6ac46a'}}>looking for new opportunities with React</span> to showcase my abilities 
+                <p style={darkMode === 'true' ? {color: '#969e98'} : {color: '#6f7378'}}>I am currently <span className='text-color-change' style={darkMode === 'true' ? {color: '#93faa1'} : {color: '#6ac46a'}}>looking for new opportunities with PHP or React</span> to showcase my abilities 
                     and evolve my knowledge within the framework. 
                     Feel free to send me an e-mail.</p>
                 <div className='contact-section-sub-container'>

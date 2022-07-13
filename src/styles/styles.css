@@ -263,7 +263,7 @@ a:visited{
 .navbar-modal-container{
     position: absolute;
     top: 0;
-    left: 37vw;
+    left: 40vw;
     width: 60vw;
     height: 100vh;
     background-color: var(--clr-background);
@@ -430,6 +430,7 @@ a:visited{
 .sticky{
     position: sticky;
     top: 0vh;
+    z-index:3;
 }
 
 .title-container{
