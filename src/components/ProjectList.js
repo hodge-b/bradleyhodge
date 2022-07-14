@@ -18,7 +18,7 @@ const projects = [
     {
         id: nanoid(),
         title: 'bradleyhodge.ca',
-        description: 'My main portfolio website built with the React framework, it also utilizes React\'s styled components.',
+        description: 'My main portfolio website built with the React framework, it also utilizes React\'s styled-components.',
         tech: ['React', 'Styled-Components', 'CSS Styling', 'JavaScript'],
         link: 'https://bradleyhodge.ca',
         codeLink: 'https://github.com/hodge-b/bradleyhodge.ca',
