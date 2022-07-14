@@ -1,20 +1,21 @@
 import React from 'react'
+import {StyledAboutContainer} from './styled/About.styled'
+import {StyledAboutContainerDark} from './styled/AboutDark.styled'
 
 export default function About({darkMode}){
 
-
-    return(
-        <section id='about-section'>
-            <div className="about-section-info-container">
+    const AboutElements = () =>{
+        return(
+            <>
                 <div className="title-container">
-                    <h2 className='main-title' style={darkMode === 'true' ? {color: '#969e98'} : {color: '#6f7378'}}><span className='main-title--number' style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}>-02-</span> About Me</h2>
+                    <h2 className='main-title' ><span className='main-title--number'>-02-</span> About Me</h2>
                     <hr className='title--hr'/>
                 </div>
                 <div className="about-section-main-wrapper">
-                    <div className="about-section-main-text" style={darkMode === 'true' ? {color: '#969e98'} : {color: '#6f7378'}}>
+                    <div className="about-section-main-text">
                         <p>
                             Hi, my name is Bradley Hodge and this is my story. I have spent the last ten years creating and building
-                            programs using various languages (ie. C++, C#, Java, etc) as a hobbyist programmer. This was all thanks to
+                            programs using various languages (ie. Javascript, PHP, C++, C#, Java, etc) as a hobbyist programmer. This was all thanks to
                             my facination with video games and a creative spark.
                         </p>
                         <p>
@@ -29,35 +30,35 @@ export default function About({darkMode}){
                         <p>Here are a few of the technologies I've recently been working with:</p>
                         <div className="about-section-tech-container">
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
+                                <i className="ri-tools-line"></i>
                                 <p>HTML</p>
                             </div>
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
+                                <i className="ri-tools-line"></i>
                                 <p>CSS</p>
                             </div>
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
+                                <i className="ri-tools-line"></i>
                                 <p>JavaScript (ES6+)</p>
                             </div> 
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
+                                <i className="ri-tools-line"></i>
                                 <p>SCSS</p>
                             </div>
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
+                                <i className="ri-tools-line"></i>
                                 <p>React</p>
                             </div>
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
+                                <i className="ri-tools-line"></i>
                                 <p>Bootstrap</p>
                             </div>
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
+                                <i className="ri-tools-line"></i>
                                 <p>PHP</p>
                             </div>
                             <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line" style={darkMode === 'true' ? {color: '#93faa1'}: {color: '#6ac46a'}}></i>
+                                <i className="ri-tools-line"></i>
                                 <p>MySQL</p>
                             </div>
                         </div>
@@ -68,7 +69,22 @@ export default function About({darkMode}){
                         </div>
                     </div>
                 </div>
-            </div>
+            </>
+        )
+    }
+
+
+    return(
+        <section id='about-section'>
+            {darkMode === 'false' ? 
+                <StyledAboutContainer className="about-section-info-container">
+                    <AboutElements />
+                </StyledAboutContainer>
+            :
+                <StyledAboutContainerDark className="about-section-info-container">
+                    <AboutElements />
+                </StyledAboutContainerDark>
+            }   
         </section>
         
     )

@@ -8,6 +8,8 @@ import Projects from './components/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import {StyledMain} from './components/styled/App.styled'
+import {StyledMainDark} from './components/styled/AppDark.styled'
 
 
 export default function App(){
@@ -21,15 +23,31 @@ export default function App(){
         darkMode === 'false' ? setDarkMode('true') : setDarkMode('false');
     }
 
+    const AppElements = () =>{
+        return(
+            <>
+                <Header windowWidth={windowWidth} darkMode={darkMode} onclick={setDarkModeToggle} />
+                <SideSkirts darkMode={darkMode} />
+                <Hero darkMode={darkMode} />
+                <Projects darkMode={darkMode} />
+                <About darkMode={darkMode} /> 
+                <Contact darkMode={darkMode} />
+                <Footer darkMode={darkMode} />
+            </>
+        )
+    }
+
     return(
-        <main id='main' style={darkMode === 'true' ? {backgroundColor: '#171e18'} : {backgroundColor: '#ffffff'}}>
-            <Header windowWidth={windowWidth} darkMode={darkMode} onclick={setDarkModeToggle} />
-            <SideSkirts darkMode={darkMode} />
-            <Hero darkMode={darkMode} />
-            <Projects darkMode={darkMode} />
-            <About darkMode={darkMode} /> 
-            <Contact darkMode={darkMode} />
-            <Footer darkMode={darkMode} />
-        </main>
+        <>
+            {darkMode === 'false' ?
+                <StyledMain id='main'>
+                    <AppElements />
+                </StyledMain>
+            :
+                <StyledMainDark id='main'>
+                    <AppElements />
+                </StyledMainDark>
+            }
+        </>
     )
 }
