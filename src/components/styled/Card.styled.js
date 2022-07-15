@@ -17,7 +17,7 @@ export const StyledCardContainer = styled.div`
     }
     .btn{
         border: 1px solid ${themedColors.accent};
-        background-color: ${themedColors.accent};
+        background-color: ${themedColors.background};
         color: #000000;
     }
 `

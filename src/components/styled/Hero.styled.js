@@ -19,7 +19,7 @@ export const StyledHero = styled.section`
     }
     .btn--get-started{
         border: 1px solid ${themedColors.accent};
-        background-color: ${themedColors.accent};
+        background-color: ${themedColors.background};
         color: #000000;
     }
 `
