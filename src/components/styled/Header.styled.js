@@ -9,5 +9,6 @@ export const StyledHeader = styled.header`
     }
     i{
         color: ${themedColors.primary};
+        cursor: pointer;
     }
 `

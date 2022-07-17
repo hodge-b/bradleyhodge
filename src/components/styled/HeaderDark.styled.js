@@ -8,5 +8,6 @@ export const StyledHeaderDark = styled.header`
     }
     i{
         color: #93faa1;
+        cursor: pointer;
     }
 `
