@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.7e05f73b.css",
+    "main.css": "/static/css/main.8adcf8f7.css",
     "main.js": "/static/js/main.f01fd986.js",
     "static/media/bikershaven.png": "/static/media/bikershaven.34b69bdfea4024d7e648.png",
     "static/media/myself.jpg": "/static/media/myself.a5da5d60c2ad76c67588.jpg",
@@ -8,11 +8,11 @@
     "static/media/wordle.png": "/static/media/wordle.ad7147ccb9f97a735b78.png",
     "static/media/trackify.png": "/static/media/trackify.efdc262a6f677cd184d1.png",
     "index.html": "/index.html",
-    "main.7e05f73b.css.map": "/static/css/main.7e05f73b.css.map",
+    "main.8adcf8f7.css.map": "/static/css/main.8adcf8f7.css.map",
     "main.f01fd986.js.map": "/static/js/main.f01fd986.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e05f73b.css",
+    "static/css/main.8adcf8f7.css",
     "static/js/main.f01fd986.js"
   ]
 }
