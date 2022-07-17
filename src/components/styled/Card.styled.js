@@ -14,10 +14,12 @@ export const StyledCardContainer = styled.div`
     }
     .card-tech-container > p{
         color: ${themedColors.primary};
+
     }
     .btn{
         border: 1px solid ${themedColors.accent};
         background-color: ${themedColors.background};
+        text-align: center;
         color: #000000;
     }
 `
