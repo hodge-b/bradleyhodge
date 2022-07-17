@@ -14,7 +14,8 @@ export const StyledCardContainer = styled.div`
     }
     .card-tech-container > p{
         color: ${themedColors.primary};
-
+        background-color: ${themedColors.secondary};
+        border-radius: 5px;
     }
     .btn{
         border: 1px solid ${themedColors.accent};

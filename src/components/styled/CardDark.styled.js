@@ -14,6 +14,8 @@ export const StyledCardContainerDark = styled.div`
     }
     .card-tech-container > p{
         color: ${themedColorsDark.primary};
+        background-color: ${themedColorsDark.secondaryBackground};
+        border-radius: 5px;
     }
     .btn--live-link{
         border: 1px solid ${themedColorsDark.accent};

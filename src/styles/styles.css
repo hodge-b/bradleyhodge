@@ -982,10 +982,9 @@ a:visited{
 .card-tech-item{
     padding: .1rem .2rem;
     margin: .1rem;
+    
     font-size: var(--fsize-main-text);
     color: var(--clr-hero-main);
-    background-color: #d9ded6;
-    border-radius: 5px;
 }
 
 .card-link-container{
