@@ -4,6 +4,15 @@ import {StyledAboutContainerDark} from './styled/AboutDark.styled'
 
 export default function About({darkMode}){
 
+    const TechItemElement = ({name})=>{
+        return(
+            <div className="about-section-tech-item-container">
+                <i className='ri-tools-line'></i>
+                <p>{name}</p>
+            </div>
+        )
+    }
+
     const AboutElements = () =>{
         return(
             <>
@@ -29,38 +38,18 @@ export default function About({darkMode}){
                         </p>
                         <p>Here are a few of the technologies I've recently been working with:</p>
                         <div className="about-section-tech-container">
-                            <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
-                                <p>HTML</p>
-                            </div>
-                            <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
-                                <p>CSS</p>
-                            </div>
-                            <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
-                                <p>JavaScript (ES6+)</p>
-                            </div> 
-                            <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
-                                <p>SCSS</p>
-                            </div>
-                            <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
-                                <p>React</p>
-                            </div>
-                            <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
-                                <p>Bootstrap</p>
-                            </div>
-                            <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
-                                <p>PHP</p>
-                            </div>
-                            <div className="about-section-tech-item-container">
-                                <i className="ri-tools-line"></i>
-                                <p>MySQL</p>
-                            </div>
+                            <TechItemElement name={'HTML'} />
+                            <TechItemElement name={'CSS'} />
+                            <TechItemElement name={'Javascript(ES6+)'} />
+                            <TechItemElement name={'SCSS'} />
+                            <TechItemElement name={'React'} />
+                            <TechItemElement name={'Styled-Components'} />
+                            <TechItemElement name={'Bootstrap'} />
+                            <TechItemElement name={'PHP'} />
+                            <TechItemElement name={'MySQL'} />
+                            <TechItemElement name={'Node.js'} />
+                            <TechItemElement name={'Express'} />
+                            <TechItemElement name={'Axios'} />
                         </div>
                     </div>
                     <div className="about-section-image-container">
