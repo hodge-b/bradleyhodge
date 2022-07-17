@@ -10,7 +10,7 @@ const projects = [
     {
         id: nanoid(),
         title: 'Biker\'s Haven E-commerce Website',
-        description: '(Work in Progress) This is a e-commerce website I\'m designing and developing. Currently, it does not have functionality but it is a good example of my front-end capabilities showcasing my design/development skills with it\'s visuals and responsiveness. It is linked with a Node.js back-end, which I\'m currently working on the functionality and dynamics of a full-stack application.',
+        description: '(Work in Progress) This is a e-commerce website I\'m designing and developing. Currently, it does not have functionality but it is a good example of my front-end capabilities showcasing my design/development skills with it\'s visuals and responsiveness. It is linked with a Node.js back-end, which I\'m currently working on the functionality and dynamics for a full-stack application.',
         tech: ['React','Axios','Node.js','MySQL', 'Javascript'],
         link: 'https://bikers-haven.herokuapp.com/',
         codeLink: 'https://github.com/hodge-b/bikers-haven',
