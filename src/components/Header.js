@@ -14,7 +14,7 @@ export default function Header({windowWidth, darkMode, onclick}){
                 <StyledHeader className='sticky'>
                     <div className="header-home-container">
                         <a href='#contact-section'><p className='header-home' >Bradley Hodge</p></a>
-                        <i class='ri-moon-line' onClick={onclick}></i>
+                        <i className='ri-moon-line' onClick={onclick}></i>
                     </div>
                     <Navbar windowWidth={windowWidth} darkMode={darkMode} />
                 </StyledHeader> 
@@ -23,7 +23,7 @@ export default function Header({windowWidth, darkMode, onclick}){
                 <StyledHeaderDark className='sticky'>
                     <div className="header-home-container">
                         <a href='#contact-section'><p className='header-home' >Bradley Hodge</p></a>
-                        <i class='ri-sun-line' onClick={onclick}></i>
+                        <i className='ri-sun-line' onClick={onclick}></i>
                     </div>
                     <Navbar windowWidth={windowWidth} darkMode={darkMode} />
                 </StyledHeaderDark>

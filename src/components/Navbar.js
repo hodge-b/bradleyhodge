@@ -10,10 +10,12 @@ export default function Navbar({windowWidth, darkMode}){
     const [isNavbarModalOpen, setIsNavbarModalOpen] = useState(false)
 
     const handleHamburgerClick = () => {
-        setIsNavbarModalOpen(true)
+        setIsNavbarModalOpen(true);
+        document.body.style.overflow = 'hidden';
     }
     const handleModalExit = () => {
-        setIsNavbarModalOpen(false)
+        setIsNavbarModalOpen(false);
+        document.body.style.overflow = 'auto';
     }
 
     return(
