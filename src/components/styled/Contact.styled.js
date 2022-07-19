@@ -15,8 +15,8 @@ export const StyledContact = styled.section`
         color: ${themedColors.primary};
     }
     .btn--say-hi{
-        border: 1px solid ${themedColors.accent};
-        background-color: ${themedColors.background};
+        border: 1px solid ${themedColors.secondaryAccent};
+        background-color: ${themedColors.secondaryAccent};
         color: #000000;
     }
 `

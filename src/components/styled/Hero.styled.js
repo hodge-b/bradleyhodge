@@ -18,8 +18,8 @@ export const StyledHero = styled.section`
         color: ${themedColors.accent};
     }
     .btn--get-started{
-        border: 1px solid ${themedColors.accent};
-        background-color: ${themedColors.background};
+        border: 1px solid ${themedColors.secondaryAccent};
+        background-color: ${themedColors.secondaryAccent};
         color: #000000;
     }
 `

@@ -1,5 +1,6 @@
 export const themedColors = {
     accent: '#6ac46a',
+    secondaryAccent: '#78c978',
     primary: '#6f7378',
     secondary: '#d9ded6',
     background: '#fdfdfc'

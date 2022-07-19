@@ -18,8 +18,8 @@ export const StyledCardContainer = styled.div`
         border-radius: 5px;
     }
     .btn{
-        border: 1px solid ${themedColors.accent};
-        background-color: ${themedColors.background};
+        border: 1px solid ${themedColors.secondaryAccent};
+        background-color: ${themedColors.secondaryAccent};
         text-align: center;
         color: #000000;
     }
