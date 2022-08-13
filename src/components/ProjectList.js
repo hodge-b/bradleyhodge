@@ -4,9 +4,19 @@ const bg_trackify = require("../images/trackify.png")
 const bg_bradleyhodge = require("../images/bradleyhodge.png")
 const bg_wordle = require("../images/wordle.png")
 const bg_bikershaven = require("../images/bikershaven.png");
+const bg_weather = require("../images/weatherapp.png");
 
 
 const projects = [
+    {
+        id: nanoid(),
+        title: 'Is It Raining? Weather App',
+        description: 'Is It Raining? is a project I created to showcase my ability to consume an API and parse through the data and display as an app. I use Axios to consume the API.',
+        tech: ['React', 'Styled-Components','Axios','Javascript'],
+        link: 'https://is-it-raining-app.herokuapp.com/',
+        codeLink: 'https://github.com/hodge-b/is_it_raining',
+        background: bg_weather
+    },
     {
         id: nanoid(),
         title: 'Biker\'s Haven E-commerce Website',

@@ -1,18 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.f51b853e.css",
-    "main.js": "/static/js/main.6bfd662a.js",
+    "main.js": "/static/js/main.d8955d99.js",
     "static/media/bikershaven.png": "/static/media/bikershaven.34b69bdfea4024d7e648.png",
     "static/media/myself.jpg": "/static/media/myself.a5da5d60c2ad76c67588.jpg",
+    "static/media/weatherapp.png": "/static/media/weatherapp.3f052c15f9f5f2d255f5.png",
     "static/media/bradleyhodge.png": "/static/media/bradleyhodge.b3f72bc186fdf8be0d80.png",
     "static/media/wordle.png": "/static/media/wordle.ad7147ccb9f97a735b78.png",
     "static/media/trackify.png": "/static/media/trackify.efdc262a6f677cd184d1.png",
     "index.html": "/index.html",
     "main.f51b853e.css.map": "/static/css/main.f51b853e.css.map",
-    "main.6bfd662a.js.map": "/static/js/main.6bfd662a.js.map"
+    "main.d8955d99.js.map": "/static/js/main.d8955d99.js.map"
   },
   "entrypoints": [
     "static/css/main.f51b853e.css",
-    "static/js/main.6bfd662a.js"
+    "static/js/main.d8955d99.js"
   ]
 }
