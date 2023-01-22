@@ -1,0 +1,15 @@
+{
+    "name": "brad/bradleyhodge",
+    "autoload": {
+        "psr-4": {
+            "Brad\\Bradleyhodge\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Brad Hodge",
+            "email": "bradley_hodge@hotmail.com"
+        }
+    ],
+    "require": {}
+}
