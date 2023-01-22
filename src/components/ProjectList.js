@@ -49,7 +49,7 @@ const projects = [
         title: 'Wordle in React',
         description: 'This is a Wordle clone I have built using only the React framework.',
         tech: ['React', 'CSS Styling', 'JavaScript'],
-        link: 'https://wordle-in-react.herokuapp.com',
+        link: 'https://hodge-b.github.io/wordle_clone_app/index.html',
         codeLink: 'https://github.com/hodge-b/wordle_clone_app',
         background: bg_wordle
     }
