@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import Header from "./components/Header";
 import SideSkirts from "./components/SideSkirts";
@@ -7,18 +7,19 @@ import Projects from "./components/Projects";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+
 import { StyledMain } from "./components/styled/App.styled";
 import { StyledMainDark } from "./components/styled/AppDark.styled";
 
-export default function App() {
+const App = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [darkMode, setDarkMode] = useState("false");
+  const [darkMode, setDarkMode] = useState(false);
 
   window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
 
-  function setDarkModeToggle() {
-    darkMode === "false" ? setDarkMode("true") : setDarkMode("false");
-  }
+  const setDarkModeToggle = () => {
+    setDarkMode((darkMode) => !darkMode);
+  };
 
   const AppElements = () => {
     return (
@@ -26,7 +27,7 @@ export default function App() {
         <Header
           windowWidth={windowWidth}
           darkMode={darkMode}
-          onclick={setDarkModeToggle}
+          onClick={setDarkModeToggle}
         />
         <SideSkirts darkMode={darkMode} />
         <Hero darkMode={darkMode} />
@@ -40,7 +41,7 @@ export default function App() {
 
   return (
     <>
-      {darkMode === "false" ? (
+      {!darkMode ? (
         <StyledMain id="main">
           <AppElements />
         </StyledMain>
@@ -51,5 +52,6 @@ export default function App() {
       )}
     </>
   );
-}
+};
 
+export default App;
