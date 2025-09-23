@@ -1,6 +1,8 @@
-import styled from 'styled-components';
-import { themedColors } from './styledColors';
+import styled from "styled-components";
+
+import { themedColors } from "./styledColors";
 
 export const StyledMain = styled.main`
-    background-color: ${themedColors.background};
-`
+  background-color: ${themedColors.background};
+`;
+
