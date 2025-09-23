@@ -1,9 +1,12 @@
-import React from "react";
 import { StyledAboutContainer } from "./styled/About.styled";
 import { StyledAboutContainerDark } from "./styled/AboutDark.styled";
 
-export default function About({ darkMode }) {
-  const TechItemElement = ({ name }) => {
+interface AboutProps {
+  darkMode: boolean;
+}
+
+const About = ({ darkMode }: AboutProps) => {
+  const TechItemElement = ({ name }: { name: string }) => {
     return (
       <div className="about-section-tech-item-container">
         <i className="ri-tools-line"></i>
@@ -73,7 +76,7 @@ export default function About({ darkMode }) {
 
   return (
     <section id="about-section">
-      {darkMode === "false" ? (
+      {!darkMode ? (
         <StyledAboutContainer className="about-section-info-container">
           <AboutElements />
         </StyledAboutContainer>
@@ -84,4 +87,6 @@ export default function About({ darkMode }) {
       )}
     </section>
   );
-}
+};
+
+export default About;

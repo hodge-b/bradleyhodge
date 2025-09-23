@@ -1,12 +1,16 @@
 import { nanoid } from "nanoid";
 
-import bg_trackify from "/images/trackify.png";
-import bg_weather from "/images/weatherapp.png";
-import bg_bradleyhodge from "/images/bradleyhodge.png";
-import bg_wordle from "/images/wordle.png";
-import bg_bikershaven from "/images/bikershaven.png";
+export interface ProjectItem {
+  id: string;
+  title: string;
+  description: string;
+  tech: Array<string>;
+  link: string;
+  codeLink: string;
+  background: string;
+}
 
-export const projects = [
+export const projects: Array<ProjectItem> = [
   {
     id: nanoid(),
     title: "Is It Raining? Weather App",
@@ -15,7 +19,7 @@ export const projects = [
     tech: ["React", "Styled-Components", "Axios", "Javascript"],
     link: "https://is-it-raining-app.herokuapp.com/",
     codeLink: "https://github.com/hodge-b/is_it_raining",
-    background: bg_weather,
+    background: "/images/weatherapp.png",
   },
   {
     id: nanoid(),
@@ -33,7 +37,7 @@ export const projects = [
     ],
     link: "https://bikers-haven.herokuapp.com/",
     codeLink: "https://github.com/hodge-b/bikers-haven",
-    background: bg_bikershaven,
+    background: "/images/bikershaven.png",
   },
   {
     id: nanoid(),
@@ -43,7 +47,7 @@ export const projects = [
     tech: ["HTML", "Bootstrap", "PHP", "MySQL"],
     link: "https://trackify-bugtracker.herokuapp.com/login.php",
     codeLink: "https://github.com/hodge-b/trackify",
-    background: bg_trackify,
+    background: "/images/trackify.png",
   },
   {
     id: nanoid(),
@@ -53,7 +57,7 @@ export const projects = [
     tech: ["React", "Styled-Components", "CSS Styling", "JavaScript"],
     link: "https://bradleyhodge.ca",
     codeLink: "https://github.com/hodge-b/bradleyhodge.ca",
-    background: bg_bradleyhodge,
+    background: "/images/bradleyhodge.png",
   },
   {
     id: nanoid(),
@@ -63,6 +67,6 @@ export const projects = [
     tech: ["React", "CSS Styling", "JavaScript"],
     link: "https://hodge-b.github.io/wordle_clone_app/index.html",
     codeLink: "https://github.com/hodge-b/wordle_clone_app",
-    background: bg_wordle,
+    background: "/images/wordle.png",
   },
 ];

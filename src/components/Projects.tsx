@@ -1,23 +1,18 @@
-import React from "react";
+import { nanoid } from "nanoid";
 
 import Card from "./Card";
 import { StyledProjects } from "./styled/Projects.styled";
 import { StyledProjectsDark } from "./styled/ProjectsDark.styled";
 import { projects } from "./ProjectList";
 
-export default function Projects({ darkMode }) {
-  // elements mapped for the card component
+interface ProjectProps {
+  darkMode: boolean;
+}
+
+const Projects = ({ darkMode }: ProjectProps) => {
+  // Elements mapped for the card component.
   const cardElements = projects.map((item) => (
-    <Card
-      key={item.id}
-      title={item.title}
-      description={item.description}
-      techs={item.tech}
-      link={item.link}
-      codeLink={item.codeLink}
-      background={item.background}
-      darkMode={darkMode}
-    />
+    <Card key={nanoid()} projectItem={item} darkMode={darkMode} />
   ));
 
   const ProjectsTitleElements = () => {
@@ -34,7 +29,7 @@ export default function Projects({ darkMode }) {
   return (
     <section id="projects-section">
       <div className="projects-section-container">
-        {darkMode === "false" ? (
+        {!darkMode ? (
           <StyledProjects className="title-container">
             <ProjectsTitleElements />
           </StyledProjects>
@@ -48,5 +43,6 @@ export default function Projects({ darkMode }) {
       </div>
     </section>
   );
-}
+};
 
+export default Projects;
