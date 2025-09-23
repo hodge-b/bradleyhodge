@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Run through linting.
+pnpm lint
+
+# Run build.
+pnpm build
