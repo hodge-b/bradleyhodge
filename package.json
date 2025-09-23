@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "pnpm dlx gh-pages --git ./git-nosign -d dist -b gh-pages --cname bradhodge.dev",
+    "deploy": "pnpm dlx gh-pages --git $(pwd)/git-nosign -d dist -b gh-pages --cname bradhodge.dev",
     "preview": "vite preview"
   },
   "eslintConfig": {
