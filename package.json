@@ -2,6 +2,7 @@
   "name": "brad_hodge_portfolio",
   "version": "1.1.0",
   "private": true,
+  "type": "module",
   "homepage": "https://bradhodge.dev",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -12,12 +13,14 @@
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "styled-components": "^5.3.5",
+    "vite-tsconfig-paths": "^5.1.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": [
@@ -38,12 +41,15 @@
     ]
   },
   "devDependencies": {
+    "@eslint/js": "^9.36.0",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "@typescript-eslint/eslint-plugin": "^8.44.1",
     "@typescript-eslint/parser": "^8.44.1",
     "@vitejs/plugin-react": "^5.0.3",
+    "eslint": "^9.36.0",
     "typescript": "^5.9.2",
+    "typescript-eslint": "^8.44.1",
     "vite": "^7.1.7"
   }
 }
