@@ -63,7 +63,7 @@ export default function About({ darkMode }) {
           </div>
           <div className="about-section-image-container">
             <div className="about-section-image">
-              <img src="../images/myself.jpg" alt="myself.jpg" />
+              <img src="/images/myself.jpg" alt="myself.jpg" />
             </div>
           </div>
         </div>
@@ -85,4 +85,3 @@ export default function About({ darkMode }) {
     </section>
   );
 }
-

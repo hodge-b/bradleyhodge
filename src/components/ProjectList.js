@@ -1,10 +1,10 @@
 import { nanoid } from "nanoid";
 
-import bg_trackify from "../images/trackify.png";
-import bg_weather from "../images/weatherapp.png";
-import bg_bradleyhodge from "../images/bradleyhodge.png";
-import bg_wordle from "../images/wordle.png";
-import bg_bikershaven from "../images/bikershaven.png";
+import bg_trackify from "/images/trackify.png";
+import bg_weather from "/images/weatherapp.png";
+import bg_bradleyhodge from "/images/bradleyhodge.png";
+import bg_wordle from "/images/wordle.png";
+import bg_bikershaven from "/images/bikershaven.png";
 
 export const projects = [
   {
