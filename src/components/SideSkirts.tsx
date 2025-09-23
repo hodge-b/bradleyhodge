@@ -1,3 +1,5 @@
+import React from "react";
+
 import { StyledSideSkirtComponent } from "./styled/SideSkirts.styled";
 import { StyledSideSkirtComponentDark } from "./styled/SideSkirtsDark.styled";
 

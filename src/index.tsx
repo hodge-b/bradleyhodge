@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import React, { StrictMode } from "react";
 import ReactDOM, { Container } from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";

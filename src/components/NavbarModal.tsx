@@ -1,3 +1,5 @@
+import React from "react";
+
 import { StyledNavbarModalContainerDark } from "./styled/NavbarModalDark.styled";
 
 interface NavbarModal {

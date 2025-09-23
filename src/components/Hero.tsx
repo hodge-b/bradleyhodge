@@ -1,3 +1,5 @@
+import React from "react";
+
 import { StyledHero } from "./styled/Hero.styled";
 import { StyledHeroDark } from "./styled/HeroDark.styled";
 

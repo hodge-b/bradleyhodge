@@ -1,3 +1,5 @@
+import React from "react";
+
 import { StyledAboutContainer } from "./styled/About.styled";
 import { StyledAboutContainerDark } from "./styled/AboutDark.styled";
 

@@ -1,3 +1,5 @@
+import React from "react";
+
 import { StyledContact } from "./styled/Contact.styled";
 import { StyledContactDark } from "./styled/ContactDark.styled";
 

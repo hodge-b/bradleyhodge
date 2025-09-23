@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { StyledNavbar } from "./styled/Navbar.styled";
 import { StyledNavbarDark } from "./styled/NavbarDark.styled";
