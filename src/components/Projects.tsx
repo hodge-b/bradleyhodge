@@ -1,20 +1,20 @@
-import React from "react";
-
 import { nanoid } from "nanoid";
 
 import Card from "./Card";
 import { StyledProjects } from "./styled/Projects.styled";
 import { StyledProjectsDark } from "./styled/ProjectsDark.styled";
-import { projects } from "./ProjectList";
+
+import type { ProjectFields } from "api/getContentful";
 
 interface ProjectProps {
+  projectData: Array<ProjectFields>;
   darkMode: boolean;
 }
 
-const Projects = ({ darkMode }: ProjectProps) => {
+const Projects = ({ projectData = [], darkMode }: ProjectProps) => {
   // Elements mapped for the card component.
-  const cardElements = projects.map((item) => (
-    <Card key={nanoid()} projectItem={item} darkMode={darkMode} />
+  const cardElements = projectData?.map((item: ProjectFields) => (
+    <Card key={nanoid()} data={item} darkMode={darkMode} />
   ));
 
   const ProjectsTitleElements = () => {
