@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Header from "./components/Header";
 import SideSkirts from "./components/SideSkirts";
@@ -11,9 +11,29 @@ import Footer from "./components/Footer";
 import { StyledMain } from "./components/styled/App.styled";
 import { StyledMainDark } from "./components/styled/AppDark.styled";
 
+import type { ProjectFields } from "api/getContentful";
+
 const App = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [darkMode, setDarkMode] = useState(false);
+  const [contentfulData, setContentfulData] = useState<ProjectFields | null>(
+    null,
+  );
+
+  useEffect(() => {
+    const baseUrl = import.meta.env.VITE_API_BASE ?? "";
+    (async () => {
+      try {
+        const response = await fetch(`${baseUrl}/api/getContentful`);
+        if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+
+        const data = await response.json();
+        setContentfulData(data);
+      } catch (error) {
+        console.error("Failed to fetch contentful data: ", error);
+      }
+    })();
+  }, []);
 
   window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
 
@@ -31,7 +51,7 @@ const App = () => {
         />
         <SideSkirts darkMode={darkMode} />
         <Hero darkMode={darkMode} />
-        <Projects darkMode={darkMode} />
+        <Projects projectData={contentfulData} darkMode={darkMode} />
         <About darkMode={darkMode} />
         <Contact darkMode={darkMode} />
         <Footer darkMode={darkMode} />
