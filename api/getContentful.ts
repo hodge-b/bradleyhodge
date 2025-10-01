@@ -3,6 +3,7 @@ import type { IncomingMessage, ServerResponse } from "http";
 
 import type {
   AboutPageType,
+  ContactPageType,
   HeroPageType,
   SiteType,
   Image,
@@ -13,6 +14,7 @@ import type {
   TypeHeroPageSkeleton,
   TypeAboutPageSkeleton,
   TypeTechnologySkeleton,
+  TypeContactPageSkeleton,
 } from "../@types/generated/contentful.d.ts";
 
 type LinkEntry = Entry<TypeLinkSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
@@ -23,6 +25,10 @@ type SiteEntry = Entry<TypeSiteSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
 type HeroPageEntry = Entry<TypeHeroPageSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
 type AboutPageEntry = Entry<
   TypeAboutPageSkeleton,
+  "WITHOUT_UNRESOLVABLE_LINKS"
+>;
+type ContactPageEntry = Entry<
+  TypeContactPageSkeleton,
   "WITHOUT_UNRESOLVABLE_LINKS"
 >;
 
@@ -40,7 +46,7 @@ export default async function handler(
     // Call for contentful data.
     const entries = await client.getEntries({
       content_type: "site",
-      include: 5,
+      include: 10,
     });
 
     const siteEntry = entries.items[0] as SiteEntry;
@@ -66,10 +72,12 @@ export default async function handler(
 const normalizeContentfulData = (site: SiteEntry): SiteType => {
   const heroPage = site.fields.heroPage as HeroPageEntry;
   const aboutPage = site.fields.aboutPage as AboutPageEntry;
+  const contactPage = site.fields.contactPage as ContactPageEntry;
 
   return {
     heroPage: normalizeHeroPageData(heroPage),
     aboutPage: normalizeAboutPageData(aboutPage),
+    contactPage: normalizeContactPageData(contactPage),
   };
 };
 
@@ -105,6 +113,23 @@ const normalizeAboutPageData = (aboutPage: AboutPageEntry): AboutPageType => {
         image: techImage ? normalizeAsset(techImage) : undefined,
       };
     }),
+  };
+};
+
+const normalizeContactPageData = (
+  contactPage: ContactPageEntry
+): ContactPageType => {
+  const ctaButton = contactPage.fields?.contactCtaButton as LinkEntry;
+
+  return {
+    title: contactPage.fields.title,
+    description: contactPage.fields.description,
+    ctaButton: {
+      config: {
+        label: ctaButton.fields.label,
+        link: ctaButton.fields.link,
+      },
+    },
   };
 };
 

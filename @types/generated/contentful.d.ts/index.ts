@@ -1,4 +1,5 @@
 export type { TypeAboutPage, TypeAboutPageFields, TypeAboutPageSkeleton } from "./TypeAboutPage";
+export type { TypeContactPage, TypeContactPageFields, TypeContactPageSkeleton } from "./TypeContactPage";
 export type { TypeHeroPage, TypeHeroPageFields, TypeHeroPageSkeleton } from "./TypeHeroPage";
 export type { TypeLink, TypeLinkFields, TypeLinkSkeleton } from "./TypeLink";
 export type { TypeProject, TypeProjectFields, TypeProjectSkeleton } from "./TypeProject";
