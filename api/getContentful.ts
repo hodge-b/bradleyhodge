@@ -1,26 +1,20 @@
-import { createClient } from "contentful";
-
+import { createClient, type Entry } from "contentful";
 import type { IncomingMessage, ServerResponse } from "http";
-import type {
-  ContentfulLink,
-  ContentfulImage,
-  ProjectEntrySkeleton,
-  ResolvedLinkEntry,
-  ResolvedImageAsset,
-  ResolvedProjectEntry,
-} from "../src/types/contentful";
 
-export interface ProjectFields {
-  title: string;
-  description: string;
-  images: Array<ContentfulImage | null>;
-  liveLink?: ContentfulLink;
-  gitLink?: ContentfulLink;
-}
+import type { HeroPageType, SiteType } from "../types/contentful";
+import type {
+  TypeSiteSkeleton,
+  TypeLinkSkeleton,
+  TypeHeroPageSkeleton,
+} from "../@types/generated/contentful.d.ts";
+
+type SiteEntry = Entry<TypeSiteSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
+type HeroPageEntry = Entry<TypeHeroPageSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
+type LinkEntry = Entry<TypeLinkSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
 
 export default async function handler(
   _req: IncomingMessage,
-  res: ServerResponse,
+  res: ServerResponse
 ) {
   try {
     // Set up contentful client.
@@ -30,16 +24,13 @@ export default async function handler(
     });
 
     // Call for contentful data.
-    const entries = await client.getEntries<ProjectEntrySkeleton>({
-      content_type: "project",
-      include: 2,
+    const entries = await client.getEntries({
+      content_type: "site",
+      include: 5,
     });
 
-    const resolvedItems = entries.items as unknown as ResolvedProjectEntry[];
-
-    const normalized = resolvedItems.map((item: ResolvedProjectEntry) =>
-      normalizeData(item),
-    );
+    const siteEntry = entries.items[0] as SiteEntry;
+    const normalized = normalizeContentfulData(siteEntry);
 
     res.writeHead(200, {
       "Content-Type": "application/json",
@@ -58,51 +49,27 @@ export default async function handler(
   }
 }
 
-const normalizeData = (entry: ResolvedProjectEntry): ProjectFields => {
-  const getLinkData = (linkEntry?: ResolvedLinkEntry) => {
-    if (!linkEntry?.fields) return undefined;
-
-    if (linkEntry.fields) {
-      return {
-        label: linkEntry.fields.label,
-        link: linkEntry.fields.link,
-      };
-    }
-
-    return undefined;
-  };
-
-  const getImageData = (
-    imageAssets: Array<ResolvedImageAsset>,
-  ): Array<ContentfulImage | null> => {
-    return imageAssets.map((asset) => {
-      if (!asset.fields?.file?.url) return null;
-
-      if (asset.fields.file?.details) {
-        if ("image" in asset.fields.file.details) {
-          const imageDetails = asset.fields.file.details.image;
-
-          return {
-            src: asset.fields.file.url as string,
-            alt: asset.fields.title as string,
-            width: imageDetails?.width ?? undefined,
-            height: imageDetails?.height ?? undefined,
-          };
-        }
-      }
-
-      return {
-        src: asset.fields.file.url as string,
-        alt: asset.fields.title as string,
-      };
-    });
-  };
+const normalizeContentfulData = (site: SiteEntry): SiteType => {
+  const heroPage = site.fields.heroPage as HeroPageEntry;
 
   return {
-    title: entry.fields.title as string,
-    description: entry.fields.description as string,
-    images: getImageData(entry.fields.image),
-    liveLink: getLinkData(entry.fields.liveLink),
-    gitLink: getLinkData(entry.fields.gitLink),
+    heroPage: normalizeHeroPageData(heroPage),
+  };
+};
+
+const normalizeHeroPageData = (heroPage: HeroPageEntry): HeroPageType => {
+  const ctaButton = heroPage.fields?.heroCtaButton as LinkEntry;
+
+  return {
+    mainHeading: heroPage.fields.mainHeading,
+    overline: heroPage.fields?.overline ?? null,
+    subHeading: heroPage.fields?.subHeading ?? null,
+    description: heroPage.fields.description,
+    ctaButton: {
+      config: {
+        label: ctaButton.fields.label,
+        link: ctaButton.fields.link,
+      },
+    },
   };
 };

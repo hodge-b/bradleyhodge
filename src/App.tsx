@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import SideSkirts from "./components/SideSkirts";
 import Hero from "./components/Hero";
-import Projects from "./components/Projects";
+// import Projects from "./components/Projects";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -11,14 +11,12 @@ import Footer from "./components/Footer";
 import { StyledMain } from "./components/styled/App.styled";
 import { StyledMainDark } from "./components/styled/AppDark.styled";
 
-import type { ProjectFields } from "api/getContentful";
+import type { SiteType } from "types";
 
 const App = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [darkMode, setDarkMode] = useState(false);
-  const [contentfulData, setContentfulData] = useState<ProjectFields | null>(
-    null,
-  );
+  const [contentfulData, setContentfulData] = useState<SiteType | null>(null);
 
   useEffect(() => {
     const baseUrl = import.meta.env.VITE_API_BASE ?? "";
@@ -41,6 +39,8 @@ const App = () => {
     setDarkMode((darkMode) => !darkMode);
   };
 
+  console.log("contentfulData: ", contentfulData);
+
   const AppElements = () => {
     return (
       <>
@@ -51,7 +51,7 @@ const App = () => {
         />
         <SideSkirts darkMode={darkMode} />
         <Hero darkMode={darkMode} />
-        <Projects projectData={contentfulData} darkMode={darkMode} />
+        {/* <Projects projectData={contentfulData} darkMode={darkMode} /> */}
         <About darkMode={darkMode} />
         <Contact darkMode={darkMode} />
         <Footer darkMode={darkMode} />
