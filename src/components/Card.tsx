@@ -1,10 +1,12 @@
+import { nanoid } from "nanoid";
+
 import { StyledCardContainer } from "./styled/Card.styled";
 import { StyledCardContainerDark } from "./styled/CardDark.styled";
 
-import type { ProjectFields } from "api/getContentful";
+import { ProjectType } from "types";
 
 interface CardProps {
-  data: ProjectFields;
+  data: ProjectType;
   darkMode: boolean;
 }
 
@@ -16,6 +18,7 @@ const Card = ({ data, darkMode }: CardProps) => {
   //     {item}
   //   </p>
   // ));
+  //
 
   const cardContent = () => (
     <>
@@ -23,7 +26,7 @@ const Card = ({ data, darkMode }: CardProps) => {
         <div
           className="card-bg-image"
           style={{
-            backgroundImage: `url(${data.images[0].src})`,
+            backgroundImage: `url(${data?.images?.[0]?.url})`,
           }}
         ></div>
       )}
@@ -32,36 +35,20 @@ const Card = ({ data, darkMode }: CardProps) => {
       <p className="card-description">{data.description}</p>
       {/* <div className="card-tech-container">{techElements}</div> */}
       <div className="card-link-container">
-        {data?.liveLink && (
+        {data.ctaButtons && data.ctaButtons.length > 0 && (
           <>
-            {data?.liveLink.label !== "https://bradhodge.dev" ? (
+            {data?.ctaButtons?.map((button) => (
               <a
-                href={data.liveLink?.link ?? ""}
+                key={nanoid()}
+                className="btn btn--live-link"
+                href={button.config.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn--live-link"
               >
-                {"Live View"}
+                {button.config.label}
               </a>
-            ) : (
-              <a
-                href={data.liveLink?.link ?? ""}
-                className="btn btn--live-link"
-              >
-                {"Live View"}
-              </a>
-            )}
+            ))}
           </>
-        )}
-        {data?.gitLink && (
-          <a
-            href={data.gitLink.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn--live-link"
-          >
-            {"Live Code"}
-          </a>
         )}
       </div>
     </>

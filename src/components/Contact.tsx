@@ -1,38 +1,40 @@
-import React from "react";
-
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { StyledContact } from "./styled/Contact.styled";
 import { StyledContactDark } from "./styled/ContactDark.styled";
 
+import type { ContactPageType } from "types";
+
 interface ContactProps {
+  data?: ContactPageType;
   darkMode: boolean;
 }
 
-const Contact = ({ darkMode }: ContactProps) => {
+const Contact = ({ data, darkMode }: ContactProps) => {
+  const title = data?.title ?? "Let's Get in Touch";
+  const mainHeading = data?.mainHeading ?? "Let's Talk!";
+  const ctaButton = {
+    label: data?.ctaButton.config.label ?? "Say Hi",
+    link: data?.ctaButton.config.link ?? "mailto:bradley_hodge@hotmail.com",
+  };
+
   const ContactElements = () => {
     return (
       <>
         <div className="title-container">
           <h2 className="main-title">
-            <span className="main-title--number">-03-</span> Let's Get In Touch
+            <span className="main-title--number">-03-</span>
+            {title}
           </h2>
           <hr className="title--hr title--hr--contact" />
         </div>
         <div className="contact-section-main-container">
-          <h2 className="contact-section-subtitle">Let's Talk!</h2>
-          <p>
-            I am currently{" "}
-            <span className="text-color-change">
-              looking for new opportunities with PHP or React
-            </span>{" "}
-            to showcase my abilities and evolve my knowledge within the
-            framework. Feel free to send me an e-mail.
-          </p>
+          <h2 className="contact-section-subtitle">{mainHeading}</h2>
+          {data?.description
+            ? documentToReactComponents(data?.description)
+            : ""}
           <div className="contact-section-sub-container">
-            <a
-              href="mailto:bradley_hodge@hotmail.com"
-              className="btn btn--say-hi"
-            >
-              Say Hi
+            <a href={ctaButton.link} className="btn btn--say-hi">
+              {ctaButton.label}
             </a>
           </div>
         </div>
@@ -56,4 +58,3 @@ const Contact = ({ darkMode }: ContactProps) => {
 };
 
 export default Contact;
-

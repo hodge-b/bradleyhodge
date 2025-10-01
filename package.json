@@ -5,6 +5,8 @@
   "type": "module",
   "homepage": "https://bradhodge.dev",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^16.1.5",
+    "@contentful/rich-text-types": "^17.2.4",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
@@ -23,7 +25,8 @@
     "preview": "vite preview",
     "lint": "tsc --noemit && eslint . --ext .js,.jsx,.ts,.tsx",
     "prepare": "husky",
-    "release": "standard-version"
+    "release": "standard-version",
+    "contentful:codegen": "mkdir -p @types/generated && dotenv -e .env -- sh -c 'cf-content-types-generator -s \"$CONTENTFUL_SPACE_ID\" -t \"$CONTENTFUL_MANAGEMENT_TOKEN\" -o @types/generated/contentful.d.ts --v10'"
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +59,9 @@
     "@vitejs/plugin-react": "^5.0.3",
     "cf-content-types-generator": "^2.16.1",
     "contentful-cli": "^3.8.15",
+    "contentful-management": "^11.60.2",
+    "dotenv": "^17.2.3",
+    "dotenv-cli": "^10.0.0",
     "eslint": "^9.36.0",
     "husky": "^9.1.7",
     "standard-version": "^9.5.0",
