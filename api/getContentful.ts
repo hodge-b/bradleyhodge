@@ -1,16 +1,30 @@
-import { createClient, type Entry } from "contentful";
+import { createClient, type Asset, type Entry } from "contentful";
 import type { IncomingMessage, ServerResponse } from "http";
 
-import type { HeroPageType, SiteType } from "../types/contentful";
+import type {
+  AboutPageType,
+  HeroPageType,
+  SiteType,
+  Image,
+} from "../types/contentful";
 import type {
   TypeSiteSkeleton,
   TypeLinkSkeleton,
   TypeHeroPageSkeleton,
+  TypeAboutPageSkeleton,
+  TypeTechnologySkeleton,
 } from "../@types/generated/contentful.d.ts";
+
+type LinkEntry = Entry<TypeLinkSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
+type AssetEntry = Asset<"WITHOUT_UNRESOLVABLE_LINKS">;
+type TechEntry = Entry<TypeTechnologySkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
 
 type SiteEntry = Entry<TypeSiteSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
 type HeroPageEntry = Entry<TypeHeroPageSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
-type LinkEntry = Entry<TypeLinkSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
+type AboutPageEntry = Entry<
+  TypeAboutPageSkeleton,
+  "WITHOUT_UNRESOLVABLE_LINKS"
+>;
 
 export default async function handler(
   _req: IncomingMessage,
@@ -51,9 +65,11 @@ export default async function handler(
 
 const normalizeContentfulData = (site: SiteEntry): SiteType => {
   const heroPage = site.fields.heroPage as HeroPageEntry;
+  const aboutPage = site.fields.aboutPage as AboutPageEntry;
 
   return {
     heroPage: normalizeHeroPageData(heroPage),
+    aboutPage: normalizeAboutPageData(aboutPage),
   };
 };
 
@@ -71,5 +87,34 @@ const normalizeHeroPageData = (heroPage: HeroPageEntry): HeroPageType => {
         link: ctaButton.fields.link,
       },
     },
+  };
+};
+
+const normalizeAboutPageData = (aboutPage: AboutPageEntry): AboutPageType => {
+  const image = aboutPage.fields.image as AssetEntry | undefined;
+  const tech = aboutPage.fields.technologies as Array<TechEntry>;
+
+  return {
+    title: aboutPage.fields.title,
+    image: image ? normalizeAsset(image) : undefined,
+    description: aboutPage.fields.description,
+    tech: tech.map((item) => {
+      const techImage = item.fields.image as AssetEntry | undefined;
+      return {
+        label: item.fields.label,
+        image: techImage ? normalizeAsset(techImage) : undefined,
+      };
+    }),
+  };
+};
+
+const normalizeAsset = (asset: AssetEntry): Image => {
+  const assetDetails = asset.fields.file?.details;
+
+  return {
+    url: `https:${asset.fields.file?.url}`,
+    title: asset.fields.title ?? "",
+    width: assetDetails?.image?.width,
+    height: assetDetails?.image?.height,
   };
 };

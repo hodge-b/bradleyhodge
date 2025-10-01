@@ -26,7 +26,7 @@
     "lint": "tsc --noemit && eslint . --ext .js,.jsx,.ts,.tsx",
     "prepare": "husky",
     "release": "standard-version",
-    "contentful:codegen": "dotenv -e .env -- sh -c 'cf-content-types-generator -s \"$CONTENTFUL_SPACE_ID\" -t \"$CONTENTFUL_MANAGEMENT_TOKEN\" -o @types/generated/contentful.d.ts --v10'"
+    "contentful:codegen": "mkdir -p @types/generated && dotenv -e .env -- sh -c 'cf-content-types-generator -s \"$CONTENTFUL_SPACE_ID\" -t \"$CONTENTFUL_MANAGEMENT_TOKEN\" -o @types/generated/contentful.d.ts --v10'"
   },
   "eslintConfig": {
     "extends": [

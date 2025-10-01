@@ -2,6 +2,7 @@ import type { Document } from "@contentful/rich-text-types";
 
 export interface SiteType {
   heroPage: HeroPageType;
+  aboutPage: AboutPageType;
 }
 
 export interface HeroPageType {
@@ -12,6 +13,20 @@ export interface HeroPageType {
   ctaButton: CtaButton;
 }
 
+export interface AboutPageType {
+  title: string;
+  image?: Image;
+  description: Document;
+  tech: Array<TechType>;
+}
+
+export interface Image {
+  url: string;
+  title: string;
+  width?: number;
+  height?: number;
+}
+
 export interface CtaButton {
   config: Link;
 }
@@ -19,4 +34,9 @@ export interface CtaButton {
 export interface Link {
   label: string;
   link: string;
+}
+
+export interface TechType {
+  label: string;
+  image?: Image;
 }
