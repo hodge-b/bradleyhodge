@@ -11,14 +11,12 @@ import Footer from "./components/Footer";
 import { StyledMain } from "./components/styled/App.styled";
 import { StyledMainDark } from "./components/styled/AppDark.styled";
 
-import type { ProjectFields } from "api/getContentful";
+import type { SiteType } from "types";
 
 const App = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [darkMode, setDarkMode] = useState(false);
-  const [contentfulData, setContentfulData] = useState<ProjectFields | null>(
-    null,
-  );
+  const [contentfulData, setContentfulData] = useState<SiteType | null>(null);
 
   useEffect(() => {
     const baseUrl = import.meta.env.VITE_API_BASE ?? "";
@@ -50,10 +48,10 @@ const App = () => {
           onClick={setDarkModeToggle}
         />
         <SideSkirts darkMode={darkMode} />
-        <Hero darkMode={darkMode} />
-        <Projects projectData={contentfulData} darkMode={darkMode} />
-        <About darkMode={darkMode} />
-        <Contact darkMode={darkMode} />
+        <Hero data={contentfulData?.heroPage} darkMode={darkMode} />
+        <Projects data={contentfulData?.projectPage} darkMode={darkMode} />
+        <About data={contentfulData?.aboutPage} darkMode={darkMode} />
+        <Contact data={contentfulData?.contactPage} darkMode={darkMode} />
         <Footer darkMode={darkMode} />
       </>
     );
