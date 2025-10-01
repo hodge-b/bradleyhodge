@@ -39,8 +39,6 @@ const App = () => {
     setDarkMode((darkMode) => !darkMode);
   };
 
-  console.log("contentfulData: ", contentfulData);
-
   const AppElements = () => {
     return (
       <>
@@ -50,10 +48,10 @@ const App = () => {
           onClick={setDarkModeToggle}
         />
         <SideSkirts darkMode={darkMode} />
-        <Hero darkMode={darkMode} />
+        <Hero data={contentfulData?.heroPage} darkMode={darkMode} />
         {/* <Projects projectData={contentfulData} darkMode={darkMode} /> */}
-        <About darkMode={darkMode} />
-        <Contact darkMode={darkMode} />
+        <About data={contentfulData?.aboutPage} darkMode={darkMode} />
+        <Contact data={contentfulData?.contactPage} darkMode={darkMode} />
         <Footer darkMode={darkMode} />
       </>
     );

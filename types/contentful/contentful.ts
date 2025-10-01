@@ -23,6 +23,7 @@ export interface AboutPageType {
 
 export interface ContactPageType {
   title: string;
+  mainHeading: string;
   description: Document;
   ctaButton: CtaButton;
 }

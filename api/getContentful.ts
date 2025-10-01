@@ -123,6 +123,7 @@ const normalizeContactPageData = (
 
   return {
     title: contactPage.fields.title,
+    mainHeading: contactPage.fields.mainHeading,
     description: contactPage.fields.description,
     ctaButton: {
       config: {

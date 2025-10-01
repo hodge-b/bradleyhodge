@@ -3,6 +3,7 @@ import type { TypeLinkSkeleton } from "./TypeLink";
 
 export interface TypeContactPageFields {
     title: EntryFieldTypes.Symbol;
+    mainHeading: EntryFieldTypes.Symbol;
     description: EntryFieldTypes.RichText;
     contactCtaButton: EntryFieldTypes.EntryLink<TypeLinkSkeleton>;
 }
