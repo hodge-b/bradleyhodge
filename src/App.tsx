@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import SideSkirts from "./components/SideSkirts";
 import Hero from "./components/Hero";
-// import Projects from "./components/Projects";
+import Projects from "./components/Projects";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -49,7 +49,7 @@ const App = () => {
         />
         <SideSkirts darkMode={darkMode} />
         <Hero data={contentfulData?.heroPage} darkMode={darkMode} />
-        {/* <Projects projectData={contentfulData} darkMode={darkMode} /> */}
+        <Projects data={contentfulData?.projectPage} darkMode={darkMode} />
         <About data={contentfulData?.aboutPage} darkMode={darkMode} />
         <Contact data={contentfulData?.contactPage} darkMode={darkMode} />
         <Footer darkMode={darkMode} />

@@ -5,6 +5,8 @@ import type {
   AboutPageType,
   ContactPageType,
   HeroPageType,
+  ProjectPageType,
+  ProjectType,
   SiteType,
   Image,
 } from "../types/contentful";
@@ -15,14 +17,21 @@ import type {
   TypeAboutPageSkeleton,
   TypeTechnologySkeleton,
   TypeContactPageSkeleton,
+  TypeProjectPageSkeleton,
+  TypeProjectSkeleton,
 } from "../@types/generated/contentful.d.ts";
 
 type LinkEntry = Entry<TypeLinkSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
 type AssetEntry = Asset<"WITHOUT_UNRESOLVABLE_LINKS">;
 type TechEntry = Entry<TypeTechnologySkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
+type ProjectEntry = Entry<TypeProjectSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
 
 type SiteEntry = Entry<TypeSiteSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
 type HeroPageEntry = Entry<TypeHeroPageSkeleton, "WITHOUT_UNRESOLVABLE_LINKS">;
+type ProjectPageEntry = Entry<
+  TypeProjectPageSkeleton,
+  "WITHOUT_UNRESOLVABLE_LINKS"
+>;
 type AboutPageEntry = Entry<
   TypeAboutPageSkeleton,
   "WITHOUT_UNRESOLVABLE_LINKS"
@@ -71,16 +80,19 @@ export default async function handler(
 
 const normalizeContentfulData = (site: SiteEntry): SiteType => {
   const heroPage = site.fields.heroPage as HeroPageEntry;
+  const projectPage = site.fields.projectPage as ProjectPageEntry;
   const aboutPage = site.fields.aboutPage as AboutPageEntry;
   const contactPage = site.fields.contactPage as ContactPageEntry;
 
   return {
     heroPage: normalizeHeroPageData(heroPage),
+    projectPage: normalizeProjectPageData(projectPage),
     aboutPage: normalizeAboutPageData(aboutPage),
     contactPage: normalizeContactPageData(contactPage),
   };
 };
 
+// Hero page.
 const normalizeHeroPageData = (heroPage: HeroPageEntry): HeroPageType => {
   const ctaButton = heroPage.fields?.heroCtaButton as LinkEntry;
 
@@ -98,6 +110,48 @@ const normalizeHeroPageData = (heroPage: HeroPageEntry): HeroPageType => {
   };
 };
 
+// Project page.
+const normalizeProjectPageData = (
+  projectPage: ProjectPageEntry
+): ProjectPageType => {
+  const showcasedProjects = projectPage.fields.primaryProjectList ?? [];
+  const secondaryProjects = projectPage.fields.secondaryProjectList;
+
+  return {
+    title: projectPage.fields.title,
+    mainHeading: projectPage.fields.mainHeading,
+    subHeading: projectPage.fields.subHeading,
+    showcasedProjects: showcasedProjects.map((item) =>
+      normalizeProjectData(item as ProjectEntry)
+    ),
+    projects:
+      secondaryProjects?.map((item) =>
+        normalizeProjectData(item as ProjectEntry)
+      ) ?? null,
+  };
+};
+
+// Project.
+const normalizeProjectData = (project: ProjectEntry): ProjectType => {
+  const images = project.fields.image ?? [];
+  const ctaButtons = project.fields.projectCtaButton ?? [];
+
+  return {
+    title: project.fields.title,
+    description: project.fields.description,
+    images: images.map((item) => (item ? normalizeAsset(item) : undefined)),
+    ctaButtons: ctaButtons.map((item) => {
+      return {
+        config: {
+          label: item?.fields.label ?? "",
+          link: item?.fields.link ?? "",
+        },
+      };
+    }),
+  };
+};
+
+// About page.
 const normalizeAboutPageData = (aboutPage: AboutPageEntry): AboutPageType => {
   const image = aboutPage.fields.image as AssetEntry | undefined;
   const tech = aboutPage.fields.technologies as Array<TechEntry>;
@@ -116,6 +170,7 @@ const normalizeAboutPageData = (aboutPage: AboutPageEntry): AboutPageType => {
   };
 };
 
+// Contact page.
 const normalizeContactPageData = (
   contactPage: ContactPageEntry
 ): ContactPageType => {
@@ -134,6 +189,7 @@ const normalizeContactPageData = (
   };
 };
 
+// Image.
 const normalizeAsset = (asset: AssetEntry): Image => {
   const assetDetails = asset.fields.file?.details;
 

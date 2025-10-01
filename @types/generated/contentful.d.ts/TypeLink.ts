@@ -1,6 +1,7 @@
 import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
 
 export interface TypeLinkFields {
+    title: EntryFieldTypes.Symbol;
     label: EntryFieldTypes.Symbol;
     link: EntryFieldTypes.Symbol;
 }

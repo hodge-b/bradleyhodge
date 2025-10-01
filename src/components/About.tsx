@@ -1,4 +1,6 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { nanoid } from "nanoid";
+
 import { StyledAboutContainer } from "./styled/About.styled";
 import { StyledAboutContainerDark } from "./styled/AboutDark.styled";
 
@@ -42,7 +44,7 @@ const About = ({ data, darkMode }: AboutProps) => {
               {data && data?.tech?.length > 0 ? (
                 <>
                   {data.tech.map((item) => (
-                    <TechItemElement name={item.label} />
+                    <TechItemElement key={nanoid()} name={item.label} />
                   ))}
                 </>
               ) : (

@@ -3,7 +3,10 @@ import type { TypeProjectSkeleton } from "./TypeProject";
 
 export interface TypeProjectPageFields {
     title: EntryFieldTypes.Symbol;
-    projectList: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeProjectSkeleton>>;
+    mainHeading: EntryFieldTypes.Symbol;
+    subHeading: EntryFieldTypes.Symbol;
+    primaryProjectList: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeProjectSkeleton>>;
+    secondaryProjectList?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeProjectSkeleton>>;
 }
 
 export type TypeProjectPageSkeleton = EntrySkeletonType<TypeProjectPageFields, "projectPage">;

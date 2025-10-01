@@ -2,6 +2,7 @@ import type { Document } from "@contentful/rich-text-types";
 
 export interface SiteType {
   heroPage: HeroPageType;
+  projectPage: ProjectPageType;
   aboutPage: AboutPageType;
   contactPage: ContactPageType;
 }
@@ -12,6 +13,21 @@ export interface HeroPageType {
   subHeading: string | null;
   description: Document;
   ctaButton: CtaButton;
+}
+
+export interface ProjectPageType {
+  title: string;
+  mainHeading: string;
+  subHeading: string;
+  showcasedProjects: Array<ProjectType>;
+  projects?: Array<ProjectType> | null;
+}
+
+export interface ProjectType {
+  title: string;
+  description: string;
+  images: Array<Image | undefined>;
+  ctaButtons?: Array<CtaButton>;
 }
 
 export interface AboutPageType {
